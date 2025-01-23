@@ -34,5 +34,13 @@ namespace League
 
             return fullTable.ToString();
         }
+
+        public bool MatchResult(LeagueTeam homeTeam, int homeGoals, LeagueTeam awayTeam, int awayGoals)
+        {
+            bool resultAccepted = false;
+            
+            return resultAccepted;
+            
+        }   
     }
 }
