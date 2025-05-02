@@ -4,14 +4,14 @@ namespace League
 {
     class LeagueTeam
     {
-        public string Club { get; }
+        public string Club { get; private set; }
         public const int MaxNameLength = 24;
-        public int Played { get; } = 0;
-        public int Won { get; } = 0;
-        public int Drawn { get; } = 0;
-        public int Lost { get; } = 0;
-        public int For { get; } = 0;
-        public int Against { get; } = 0;
+        public int Played { get; private set; } = 0;
+        public int Won { get; private set; } = 0;
+        public int Drawn { get; private set; } = 0;
+        public int Lost { get; private set; } = 0;
+        public int For { get; private set; } = 0;
+        public int Against { get; private set; } = 0;
         private int PointsDeducted { get; set; } = 0;
 
         // GoalDifference is a calculated property
@@ -43,6 +43,19 @@ namespace League
                     $"{Won,3} {Drawn,3} {Lost,3} " +
                     $"{For,3} {Against,3} {GoalDifference,3} " +
                     $"{Points,3}";
+        }
+
+        public void AddTeamResult(int forGoals, int againstGoals)
+        {
+            Played++;
+            For += forGoals;
+            Against += againstGoals;
+            if (forGoals > againstGoals)
+                Won++;
+            else if (forGoals == againstGoals)
+                Drawn++;
+            else
+                Lost++;
         }
 
         // A string for use as a table header corresponding to the layout of ToString

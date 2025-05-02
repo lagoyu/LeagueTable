@@ -30,6 +30,13 @@ namespace League
 
             // Display it using its overridden ToString()
             Console.WriteLine(table.ToString());
+
+            // Enter a match result
+            bool success = table.AddMatchResult(table.GetTeam("Liverpool"), 3, table.GetTeam("Manchester City"), 2);
+
+            // Display updated Table
+            Console.WriteLine(table.ToString());
+
             Console.ReadKey();
         }
     }
