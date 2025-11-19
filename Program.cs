@@ -22,14 +22,14 @@ namespace League
             // Make use of the ToString() override
             Console.WriteLine(favouriteTeam);
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
             // Create a shortened Top 5 Premiership table
-            string[] clubNames = { "Liverpool", "Manchester City", "Arsenal", "Aston Villa", "Tottenham Hotspur"};
+            string[] clubNames = { "Liverpool", "Manchester City", "Arsenal", "Aston Villa", "Tottenham Hotspur" };
             LeagueTable table = new LeagueTable("Premiership", clubNames);
 
-            // Display it using its overridden ToString()
-            Console.WriteLine(table.ToString());
+            // Display table using its overridden ToString()
+            Console.WriteLine(table);
             Console.ReadKey();
         }
     }
