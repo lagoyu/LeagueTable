@@ -47,6 +47,7 @@ namespace League
 
         public void AddMatchResult(int OurGoals, int TheirGoals)
         {
+            Played++;
             if (OurGoals==TheirGoals)
             {
                 Drawn++;
