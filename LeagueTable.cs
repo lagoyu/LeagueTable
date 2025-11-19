@@ -61,6 +61,7 @@ namespace League
             {
                 homeTeam.AddTeamResult(homeGoals, awayGoals);
                 awayTeam.AddTeamResult(awayGoals, homeGoals);
+                resultAdded = true;
             }
             return resultAdded;
             

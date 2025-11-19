@@ -43,7 +43,7 @@ namespace League
             }
             if (success)
             {
-                Console.WriteLine($"/n{homeTeam.Club} vs {awayTeam.Club} added");
+                Console.WriteLine($"\n{homeTeam.Club} vs {awayTeam.Club} added");
                 // Display updated Table
                 Console.WriteLine(testTable);
             }
@@ -51,10 +51,6 @@ namespace League
             {
                 Console.WriteLine("Unable to add result.");
             }
-
-            // Display updated Table
-            Console.WriteLine(testTable);
-
             Console.ReadKey();
         }
     }
