@@ -38,14 +38,19 @@ namespace League
         public LeagueTeam GetTeam(string teamName)
         {
             LeagueTeam found = null;
+            int count = 0;
             foreach (LeagueTeam team in leagueTable)
             {
                 if (team.Club.StartsWith(teamName))
                 {
                     found = team;
+                    count++;
                 }
             }
-            return found;
+            if (count == 1)
+                return found;
+            else
+                return null;
         }
 
         public bool AddMatchResult(LeagueTeam homeTeam, int homeGoals, LeagueTeam awayTeam, int awayGoals)
@@ -57,8 +62,6 @@ namespace League
                 homeTeam.AddTeamResult(homeGoals, awayGoals);
                 awayTeam.AddTeamResult(awayGoals, homeGoals);
             }
-
-
             return resultAdded;
             
         }   

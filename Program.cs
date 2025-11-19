@@ -29,13 +29,18 @@ namespace League
             LeagueTable testTable = new LeagueTable("Premiership", clubNames);
 
             // Display it using its overridden ToString()
-            Console.WriteLine(testTable.ToString());
+            Console.WriteLine(testTable);
 
             // Enter a match result
-            bool success = testTable.AddMatchResult(testTable.GetTeam("Liverpool"), 3, testTable.GetTeam("Manchester City"), 2);
+            LeagueTeam homeTeam = testTable.GetTeam("Liverpool");
+            LeagueTeam awayTeam = testTable.GetTeam("Manchester City");
+            if (null != homeTeam && null != awayTeam)
+            {
+                bool success = testTable.AddMatchResult(homeTeam, 3, awayTeam, 2);
+            }
 
             // Display updated Table
-            Console.WriteLine(testTable.ToString());
+            Console.WriteLine(testTable);
 
             Console.ReadKey();
         }
