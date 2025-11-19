@@ -34,5 +34,33 @@ namespace League
 
             return fullTable.ToString();
         }
+
+        public LeagueTeam GetTeam(string teamName)
+        {
+            LeagueTeam found = null;
+            foreach (LeagueTeam team in leagueTable)
+            {
+                if (team.Club.StartsWith(teamName))
+                {
+                    found = team;
+                }
+            }
+            return found;
+        }
+
+        public bool AddMatchResult(LeagueTeam homeTeam, int homeGoals, LeagueTeam awayTeam, int awayGoals)
+        {
+            bool resultAdded = false;
+
+            if (homeTeam != awayTeam && homeGoals >= 0  && awayGoals >= 0)
+            {
+                homeTeam.AddTeamResult(homeGoals, awayGoals);
+                awayTeam.AddTeamResult(awayGoals, homeGoals);
+            }
+
+
+            return resultAdded;
+            
+        }   
     }
 }

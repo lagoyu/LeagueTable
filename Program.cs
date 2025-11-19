@@ -28,8 +28,15 @@ namespace League
             string[] clubNames = { "Liverpool", "Manchester City", "Arsenal", "Aston Villa", "Tottenham Hotspur" };
             LeagueTable testTable = new LeagueTable("Premiership", clubNames);
 
-            // Display testTable using its overridden ToString()
-            Console.WriteLine(testTable);
+            // Display it using its overridden ToString()
+            Console.WriteLine(table.ToString());
+
+            // Enter a match result
+            bool success = table.AddMatchResult(table.GetTeam("Liverpool"), 3, table.GetTeam("Manchester City"), 2);
+
+            // Display updated Table
+            Console.WriteLine(table.ToString());
+
             Console.ReadKey();
         }
     }
