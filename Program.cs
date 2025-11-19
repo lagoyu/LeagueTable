@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 namespace League
@@ -32,11 +34,22 @@ namespace League
             Console.WriteLine(testTable);
 
             // Enter a match result
+            bool success = false;
             LeagueTeam homeTeam = testTable.GetTeam("Liverpool");
             LeagueTeam awayTeam = testTable.GetTeam("Manchester City");
             if (null != homeTeam && null != awayTeam)
             {
-                bool success = testTable.AddMatchResult(homeTeam, 3, awayTeam, 2);
+                success = testTable.AddMatchResult(homeTeam, 3, awayTeam, 2);
+            }
+            if (success)
+            {
+                Console.WriteLine($"/n{homeTeam.Club} vs {awayTeam.Club} added");
+                // Display updated Table
+                Console.WriteLine(testTable);
+            }
+            else
+            {
+                Console.WriteLine("Unable to add result.");
             }
 
             // Display updated Table
