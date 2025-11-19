@@ -24,12 +24,12 @@ namespace League
 
             //Console.WriteLine();
 
-            // Create a shortened Top 5 Premiership table
+            // Create a shortened Top 5 Premiership testTable
             string[] clubNames = { "Liverpool", "Manchester City", "Arsenal", "Aston Villa", "Tottenham Hotspur" };
-            LeagueTable table = new LeagueTable("Premiership", clubNames);
+            LeagueTable testTable = new LeagueTable("Premiership", clubNames);
 
-            // Display table using its overridden ToString()
-            Console.WriteLine(table);
+            // Display testTable using its overridden ToString()
+            Console.WriteLine(testTable);
             Console.ReadKey();
         }
     }
