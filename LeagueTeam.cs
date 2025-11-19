@@ -45,7 +45,7 @@ namespace League
                     $"{Points,3}";
         }
 
-        public void AddMatchResult(int OurGoals, int TheirGoals)
+        public void AddTeamResult(int OurGoals, int TheirGoals)
         {
             Played++;
             if (OurGoals==TheirGoals)
