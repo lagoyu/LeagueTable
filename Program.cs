@@ -10,17 +10,17 @@ namespace League
         static void Main(string[] args)
         {
             // Use constructor to make a single object
-            LeagueTeam favouriteTeam = new LeagueTeam("QPR");
+            LeagueTeam testTeam = new LeagueTeam("QPR");
 
             // We can get access individual properties
-            Console.WriteLine($"{favouriteTeam.Club} have {favouriteTeam.Points} points");
+            Console.WriteLine($"{testTeam.Club} have {testTeam.Points} points");
 
             // But we can't set any of these properties - uncomment to try
-            // favouriteTeam.Points += 10;
+            // testTeam.Points += 10;
 
             Console.WriteLine(LeagueTeam.TeamColumnLabels);
             // Make use of the ToString() override
-            Console.WriteLine(favouriteTeam);
+            Console.WriteLine(testTeam);
 
             //Console.WriteLine();
 
